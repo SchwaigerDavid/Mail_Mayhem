@@ -12,7 +12,9 @@ public class Moveable : MonoBehaviour
     private Transform lastHit;
 
     private bool clicking = false;
-    private bool moving = false; 
+    private bool moving = false;
+
+    public LayerMask layermaskIgnored; 
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +32,14 @@ public class Moveable : MonoBehaviour
         {
 
             clicking = true;
+            //DontDestroyOnLoad(gameObject);
 
         }
         else if (clicking)
         {
             clicking = false;
         }
-        if (Physics.Raycast(ray, out hit, 100) && hit.transform.tag.Equals("moveable")) {
+        if (Physics.Raycast(ray, out hit, 100,layermaskIgnored) && !moving) {
             lastHit = hit.transform;
             moving = true;
         }
@@ -49,8 +52,7 @@ public class Moveable : MonoBehaviour
             lastHit.GetComponent<Rigidbody>().freezeRotation = true;
             lastHit.position = worldPosition;
         }
-        else if(lastHit != null) {
-
+        else if(lastHit != null) { 
             lastHit.GetComponent<Rigidbody>().useGravity = true;
             lastHit.transform.GetComponent<Rigidbody>().freezeRotation = false;
             lastHit = null;
