@@ -16,8 +16,8 @@ public class SceneChanger : MonoBehaviour
         foreach (GameObject item in PackageSaver.instance.getPackage())
         {
             item.transform.parent = PackageSaver.instance.packageHolder.transform;
+        }
 
-        } 
         SceneManager.LoadScene("Delivery", LoadSceneMode.Single);
      
      

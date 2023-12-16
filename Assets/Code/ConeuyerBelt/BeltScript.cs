@@ -24,7 +24,7 @@ public class BeltScript : MonoBehaviour
     private void FixedUpdate()
     {
         for (int i = 0; i < onBelt.Count; i++) { 
-            onBelt[i].GetComponent<Rigidbody>().AddForce(dir*speed);
+            onBelt[i].GetComponent<Rigidbody>().AddForce(dir * speed);
         }
     }
 
@@ -39,7 +39,9 @@ public class BeltScript : MonoBehaviour
     {
         if (!collision.transform.tag.Equals("moveable"))
         {
+            
             onBelt.Remove(collision.gameObject);
         }
     }
+    
 }

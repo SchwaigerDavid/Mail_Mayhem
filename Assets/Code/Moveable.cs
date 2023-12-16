@@ -46,8 +46,9 @@ public class Moveable : MonoBehaviour
 
         if ((moving&&clicking)&& lastHit != null )
         {
-            mousePos.z = lastHit.position.z;
+            mousePos.z = lastHit.transform.position.z;
             worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+            Debug.Log(mousePos); 
             lastHit.GetComponent<Rigidbody>().useGravity = false;
             lastHit.GetComponent<Rigidbody>().freezeRotation = true;
             lastHit.position = worldPosition;
