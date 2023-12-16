@@ -37,7 +37,7 @@ public Rigidbody myRigidbody;
     }
 
 public void calculate_if_takes_damage(double impactForce){
-    Debug.Log("impactForce: " + impactForce);
+    //Debug.Log("impactForce: " + impactForce);
         if (impactForce > damage_resistance) {
             durability -= impactForce-damage_resistance;
        }

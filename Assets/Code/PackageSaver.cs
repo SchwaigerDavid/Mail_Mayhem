@@ -9,6 +9,7 @@ public class PackageSaver : MonoBehaviour
 
     public static PackageSaver instance;
     public GameObject packageHolder;
+    public LayerMask mask; 
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,8 @@ public class PackageSaver : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.transform.tag.Equals("moveable")) { 
+        //Debug.Log(other.gameObject.layer);
+        if (other.gameObject.layer==mask) { 
             package.Add(other.gameObject);
         }
         

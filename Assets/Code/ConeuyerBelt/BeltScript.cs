@@ -10,6 +10,8 @@ public class BeltScript : MonoBehaviour
     private Vector3 dir;
     [SerializeField]
     private List<GameObject> onBelt = new List<GameObject>();
+
+    public LayerMask ignoreMask;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,18 +32,18 @@ public class BeltScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.transform.tag.Equals("moveable")&&!(onBelt.Contains(collision.gameObject)))
+        Debug.Log(collision.gameObject.layer);
+        if ( !(onBelt.Contains(collision.gameObject)))
         {
             onBelt.Add(collision.gameObject);
         }
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (!collision.transform.tag.Equals("moveable"))
-        {
+        
             
             onBelt.Remove(collision.gameObject);
-        }
+        
     }
     
 }
