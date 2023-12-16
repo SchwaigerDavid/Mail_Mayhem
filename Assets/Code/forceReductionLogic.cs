@@ -15,7 +15,9 @@ public class forceReductionLogic : MonoBehaviour
 
     private bool isSplit = false; // for Styrofoam, if it did already split in half, it can't split again
 
-    public Collider2D myCollider;
+    public Collider myCollider;
+
+    private double indestructible_time = 0; // how long is the object indestructible after it split in half
     
     void OnMouseDown(){
         if (Input.GetMouseButtonDown(1) && type=="Bubblewrap"){
@@ -26,6 +28,7 @@ public class forceReductionLogic : MonoBehaviour
     }
     public double reduce_force(double impactForce, Vector3 positionOfHit){
         // reduces the impactForce and takes damage if the force is too high
+        if (indestructible_time > 0) {return 0;} // if the object is indestructible, it is a newly split styrofoam and it absorbs all force for one second
         double new_force = impactForce - force_absorption;
         handle_damage_depending_on_type(impactForce, positionOfHit);
         return new_force;
@@ -59,22 +62,24 @@ public class forceReductionLogic : MonoBehaviour
         GameObject subobject1 = Instantiate(gameObject, center1, transform.rotation);
         GameObject subobject2 = Instantiate(gameObject, center2, transform.rotation);
             // resize them
-        subobject1.transform.localScale = new Vector3 (gameObject.transform.localScale.x * resize_factor, 1, 1);
-        subobject2.transform.localScale = new Vector3 (gameObject.transform.localScale.x * resize_factor, 1, 1);
+        subobject1.transform.localScale = new Vector3 (gameObject.transform.localScale.x, gameObject.transform.localScale.y * resize_factor, gameObject.transform.localScale.z);
+        subobject2.transform.localScale = new Vector3 (gameObject.transform.localScale.x, gameObject.transform.localScale.y * resize_factor, gameObject.transform.localScale.z);
             // edit their mass
-        Rigidbody2D ridg1 = subobject1.GetComponent<Rigidbody2D>();
+        Rigidbody ridg1 = subobject1.GetComponent<Rigidbody>();
         ridg1.mass = ridg1.mass*resize_factor;
-        Rigidbody2D ridg2 = subobject2.GetComponent<Rigidbody2D>();
+        Rigidbody ridg2 = subobject2.GetComponent<Rigidbody>();
         ridg2.mass = ridg2.mass*resize_factor;
             // create two new objects with half the durability and half the force_absorption
         forceReductionLogic script1 = subobject1.GetComponent<forceReductionLogic>();   
         script1.force_absorption *= strength_factor;
         script1.damage_resistance += strength_factor;
         script1.isSplit = true;
+        script1.indestructible_time = 1;
         forceReductionLogic script2 = subobject2.GetComponent<forceReductionLogic>();   
         script2.force_absorption *= strength_factor;
         script2.damage_resistance += strength_factor;
         script2.isSplit = true;
+        script2.indestructible_time = 1;
             // and destroy the game object
         Destroy(gameObject);
     }
@@ -113,4 +118,11 @@ public class forceReductionLogic : MonoBehaviour
         }
         
     }
+
+    void Update() {
+        if (indestructible_time > 0){
+            indestructible_time -= Time.deltaTime;
+        }
+    }
+    
 }

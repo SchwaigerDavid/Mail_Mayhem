@@ -11,7 +11,7 @@ public class SquishNewspaper : MonoBehaviour
     public double threshold = 0.5; // how much force is needed to squish the newspaper
 
     public float reductionLimit = 0.5f; // how small can the object get before it starts growing again
-    public Rigidbody2D myRigidbody2D;
+    public Rigidbody myRigidbody;
 
 
     private Vector3 originalScale;
@@ -56,10 +56,10 @@ public class SquishNewspaper : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
+    private void OnCollisionEnter(Collision collision){
         GameObject object_collided_with = collision.collider.GameObject();
         // float impactForce = collision.relativeVelocity.magnitude * myRigidbody2D.mass; // previous version; problem: if cussion falls on object, both take damage
-        float impactForce = myRigidbody2D.velocity.magnitude * myRigidbody2D.mass;
+        float impactForce = myRigidbody.velocity.magnitude * myRigidbody.mass;
 
         Debug.Log("impactForce: " + impactForce);
 
