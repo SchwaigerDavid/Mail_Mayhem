@@ -15,9 +15,15 @@ public class forceReductionLogic : MonoBehaviour
 
     private bool isSplit = false; // for Styrofoam, if it did already split in half, it can't split again
 
-    public PolygonCollider2D collider = gameObject.GetComponent<PolygonCollider2D>();
+    public Collider2D myCollider;
     
-
+    void OnMouseDown(){
+        if (Input.GetMouseButtonDown(1) && type=="Bubblewrap"){
+        // if right mouse button is pressed, and the object is bubblewrap, it pops
+            durability = 0;
+            force_absorption = 0;
+        }
+    }
     public double reduce_force(double impactForce, Vector3 positionOfHit){
         // reduces the impactForce and takes damage if the force is too high
         double new_force = impactForce - force_absorption;
@@ -44,7 +50,7 @@ public class forceReductionLogic : MonoBehaviour
         float strength_factor = 1/3;
         // creates two new objects, with half the durability and half the force_absorption
             // get size of object -> Fetch the Collider from the GameObject -> Fetch the size of the Collider volume
-        Bounds bounds = collider.bounds;
+        Bounds bounds = myCollider.bounds;
         Vector3 size = bounds.size;
             // Center of new objects is collision position +- ((width/2 -+ distanceFromCenterToCollisionPosition)/2)
         Vector3 center1 = positionOfHit + size / 4; 
