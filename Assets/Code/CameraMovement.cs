@@ -18,7 +18,7 @@ public class CameraMovement : MonoBehaviour
     {
 
         transform.position = target.position+ new Vector3(0,0,dist);
-        Debug.Log(target.rotation.eulerAngles.x);
+    
        
         transform.rotation = target.rotation * Quaternion.Euler(new Vector3(target.rotation.eulerAngles.x*-1,0,0)) * Quaternion.Euler(new Vector3(0, target.rotation.eulerAngles.y * -1, 0));
     

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestForce : MonoBehaviour
+public class RotationFix : MonoBehaviour
 {
 
     public float power = 40; 
