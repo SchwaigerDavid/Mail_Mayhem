@@ -341,66 +341,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1319691258318795046, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Size.x
-      value: 0.49504778
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258318795046, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Size.y
-      value: 0.37414962
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258318795046, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Size.z
-      value: 0.28822452
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258318795046, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Center.x
-      value: -0.18472752
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258318795046, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Center.y
-      value: -0.0047619776
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258503084448, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Drag
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258503084448, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Mass
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258503084455, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258635663298, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Size.z
-      value: 0.020059649
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258635663298, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258635663298, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Center.y
-      value: 0.013815473
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258635663298, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Center.z
-      value: 0.00020959998
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258635663299, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Size.z
-      value: 0.019917116
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258635663299, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Center.y
-      value: -0.013644419
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319691258635663299, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-      propertyPath: m_Center.z
-      value: 0.00011164937
-      objectReference: {fileID: 0}
     - target: {fileID: 1574787933702695138, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -451,37 +391,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
---- !u!1 &472033300 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2202565764481544792, guid: ccfb7eacd552f0044996c3caaf10e67d, type: 3}
-  m_PrefabInstance: {fileID: 362063138}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &472033306
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 472033300}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4186708, y: 0.09621248, z: 2.6995835}
-  m_Center: {x: 0.32555696, y: 1.0654804, z: -0.017521381}
---- !u!65 &472033312
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 472033300}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4037362, y: 1.9372427, z: 2.7780712}
-  m_Center: {x: -1.1656808, y: -0.001965873, z: 0.010564177}
 --- !u!1 &574724963
 GameObject:
   m_ObjectHideFlags: 0

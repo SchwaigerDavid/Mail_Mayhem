@@ -6,6 +6,11 @@ TagManager:
   tags:
   - moveable
   - table
+  - destroyed player object
+  - Cussioning
+  - player object
+  - player_destroyed
+  - damage_wall
   layers:
   - Default
   - TransparentFX
