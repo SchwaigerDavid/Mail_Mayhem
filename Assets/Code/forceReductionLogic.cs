@@ -14,6 +14,8 @@ public class forceReductionLogic : MonoBehaviour
     public string type = "Styrofoam"; // what type of object is this? [Newspaper, Styrofoam, Beans, Bubblewrap]
 
     private bool isSplit = false; // for Styrofoam, if it did already split in half, it can't split again
+
+    public PolygonCollider2D collider = gameObject.GetComponent<PolygonCollider2D>();
     
 
     public double reduce_force(double impactForce, Vector3 positionOfHit){
@@ -42,7 +44,6 @@ public class forceReductionLogic : MonoBehaviour
         float strength_factor = 1/3;
         // creates two new objects, with half the durability and half the force_absorption
             // get size of object -> Fetch the Collider from the GameObject -> Fetch the size of the Collider volume
-        PolygonCollider2D collider = gameObject.GetComponent<PolygonCollider2D>();
         Bounds bounds = collider.bounds;
         Vector3 size = bounds.size;
             // Center of new objects is collision position +- ((width/2 -+ distanceFromCenterToCollisionPosition)/2)
