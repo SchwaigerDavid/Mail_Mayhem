@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Delivery.unity
     guid: 1a7d4760e7addb540a712cbcea4119fc
   - enabled: 1
-    path: Assets/Scenes/Delivery_Tutorial.unity
+    path: Assets/Scenes/amena.unity
     guid: 2c947b724407a9241ac7e10296559f66
+  - enabled: 1
+    path: Assets/Scenes/Delivery_Tutorial.unity
+    guid: f150e8d5bef9cd644a7cde420c6e97f6
   m_configObjects: {}

@@ -3,7 +3,12 @@ guid: a1e7f960e686cea43bb7c4956b184903
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: styrotext
+    second: {fileID: 2100000, guid: 25f0ceb6960898244a66d5971bd3aaad, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
