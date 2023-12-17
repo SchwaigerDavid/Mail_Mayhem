@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private bool startdelivering = false;
     public GameObject winner;
     public GameObject loser;
+    public bool won = false;
     public float timer = 10; 
 
 
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
             if (timer <= 0)
             {
                 winner.SetActive(true);
+                won = true;
             }
             else
             {
@@ -32,10 +34,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void youLose() { 
-
-        loser.SetActive(true);
-        startdelivering = false;
+    public void youLose() {
+        if (!won)
+        {
+            loser.SetActive(true);
+            startdelivering = false;
+        }
         
     }
 
