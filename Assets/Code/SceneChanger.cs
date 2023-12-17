@@ -49,7 +49,8 @@ public class SceneChanger : MonoBehaviour
         switch (level) {
             case 0:
                 //tutorial
-          
+                PackageSaver.instance.packageHolder.transform.position -= new Vector3(0, 0, PackageSaver.instance.packageHolder.transform.position.z);
+                SceneManager.LoadScene("Delivery_Tutorial", LoadSceneMode.Single);
                 break;
             case 1:
                 PackageSaver.instance.packageHolder.transform.position = new Vector3(-1.118f, 1.186f, 0);
