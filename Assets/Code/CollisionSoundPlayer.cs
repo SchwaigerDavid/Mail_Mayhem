@@ -67,6 +67,9 @@ public class CollisionSoundPlayer : MonoBehaviour
             if(name.StartsWith("bigvase")) {
                 coll_sounds = glass_ceramic;
             }
+            else if(name.StartsWith("lamp")) {
+                coll_sounds = glass_ceramic;
+            }
             else if(name.StartsWith("sealplush")) {
                 coll_sounds = seal_plush;
             }
