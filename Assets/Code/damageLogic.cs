@@ -18,6 +18,8 @@ public Rigidbody myRigidbody;
 
     private void OnCollisionEnter (Collision collision){
         GameObject object_collided_with = collision.collider.GameObject();
+
+        CollisionSoundPlayer sfx = GetComponent<CollisionSoundPlayer>();
         
         // float impactForce = collision.relativeVelocity.magnitude * myRigidbody2D.mass; // previous version; problem: if cussion falls on object, both take damage
         float impactForce = myRigidbody.velocity.magnitude * myRigidbody.mass;
@@ -29,6 +31,9 @@ public Rigidbody myRigidbody;
             // let it absorb some force, before calculating damage
             Debug.Log("impactForce: " + impactForce);
             forceReductionLogic script = object_collided_with.GetComponent<forceReductionLogic>();
+
+            sfx.play_sound(impactForce);
+
             double reduced_force = script.reduce_force(impactForce, transform.position);
             Debug.Log("reduced_force: " + reduced_force);
             calculate_if_takes_damage(reduced_force);
@@ -36,9 +41,13 @@ public Rigidbody myRigidbody;
 
             // collision with non-absorbant object
             // calculate damage to current object without absorbing any force
+
+
                 Debug.Log("impactForce: " + impactForce);
                 Debug.Log(object_collided_with.tag);
                 Debug.Log(myRigidbody.velocity.magnitude);
+            
+            sfx.play_sound(impactForce);
             calculate_if_takes_damage(impactForce);
         } else{
             Debug.Log("no damage: "+object_collided_with.tag);
