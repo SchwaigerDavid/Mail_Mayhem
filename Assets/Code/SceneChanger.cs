@@ -10,10 +10,18 @@ public class SceneChanger : MonoBehaviour
    
     public bool loadPackageRun = false;
     public float timer = 2;
+    public GameObject loser;
+    public GameObject winner;
     public int level;
     // Start is called before the first frame update
     void Start()
     {
+        if(winner!=null && loser != null)
+        {
+            GameManager.instance.loser = loser;
+            GameManager.instance.winner = winner;
+            GameManager.instance.startDelivering();
+        }
         
     }
 
@@ -36,8 +44,16 @@ public class SceneChanger : MonoBehaviour
     }
     public void LoadPackageRun()
     {
-        PackageAnimation.instance.open = true;
-       loadPackageRun = true;
+        bool deliverObject = false;
+        foreach (GameObject item in PackageSaver.instance.getPackage()) { 
+            if(item.transform.tag.Equals("player object")) { deliverObject = true; break; }
+        
+        }
+        if (deliverObject)
+        {
+            PackageAnimation.instance.open = true;
+            loadPackageRun = true;
+        }
     }
     public void startPacking(int level) { 
             GameManager.instance.level = level;

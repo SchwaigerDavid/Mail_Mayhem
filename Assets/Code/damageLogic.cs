@@ -59,6 +59,7 @@ public void calculate_if_takes_damage(double impactForce){
                GameObject new_object = Instantiate(hotSwapObject, transform.position, transform.rotation);
            }
            Destroy(gameObject);
+           
        }
     }   
 }
