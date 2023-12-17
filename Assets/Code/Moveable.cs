@@ -24,14 +24,13 @@ public class Moveable : MonoBehaviour
             switch (GameManager.instance.level)
             {
                 case 0:
-                    break;
+                levels[0].SetActive(true);
+                break;
                 case 1:
                     levels[1].SetActive(true);
                     break;
                 case 2:
                     levels[2].SetActive(true);
-                    break;
-                case 3:
                     break;
 
             }

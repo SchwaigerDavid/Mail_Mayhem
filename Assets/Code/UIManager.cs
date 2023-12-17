@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     public GameObject lvltut;
     public GameObject lvl1;
     public GameObject lvl2;
-    public GameObject lvl3;
+
     public bool hovering = false;
     public bool creditsspawned = false;
     public bool lvlselectspawned = false;
@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
                             lvltut.GetComponent<Rigidbody>().useGravity = true;
                             lvl1.GetComponent<Rigidbody>().useGravity = true;
                             lvl2.GetComponent<Rigidbody>().useGravity = true;
-                            lvl3.GetComponent<Rigidbody>().useGravity = true;
+                            //lvl3.GetComponent<Rigidbody>().useGravity = true;
                             lvlselectspawned = true;
                         }
                         break;
@@ -93,9 +93,7 @@ public class UIManager : MonoBehaviour
                     case 19:
                         Camera.main.GetComponent<SceneChanger>().startPacking(2);
                         break;
-                    case 20:
-                        Camera.main.GetComponent<SceneChanger>().startPacking(3);
-                        break;
+                    
                     case 21:
                         Camera.main.GetComponent<SceneChanger>().startPacking(0);
                         break;

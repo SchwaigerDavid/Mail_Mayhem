@@ -61,12 +61,14 @@ public void calculate_if_takes_damage(double impactForce){
        }
        if (durability <= 0 && !hotSwapDone){
         hotSwapDone = true;
+        GameManager.instance.youLose();
            // object is destroyed
            if (hotSwapObject != null){
                // if there is a hotSwapObject, it is spawned in the place of the destroyed object
                GameObject new_object = Instantiate(hotSwapObject, transform.position, transform.rotation);
            }
            Destroy(gameObject);
+           
        }
     }   
 }

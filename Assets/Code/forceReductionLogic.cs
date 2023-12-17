@@ -17,6 +17,9 @@ public class forceReductionLogic : MonoBehaviour
 
     public Collider myCollider;
 
+    private bool hotSwapDone = false; 
+    public GameObject hotSwapObject; 
+
     private double indestructible_time = 0; // how long is the object indestructible after it split in half
 
     public double reduce_force(double impactForce, Vector3 positionOfHit){
@@ -89,6 +92,7 @@ public class forceReductionLogic : MonoBehaviour
             take_linear_damage(impactForce);
             if (durability <= 0) {
                 force_absorption = 0;
+                hot_swap();
             }
         } else if (type == "Styrofoam"){
             // easy hits, nothing happens, but if the force is too high, the styrofoam splits in half
@@ -104,6 +108,17 @@ public class forceReductionLogic : MonoBehaviour
             Debug.LogError("type not found");
         }
         
+    }
+    private void hot_swap(){
+        if (durability <= 0 && !hotSwapDone){
+            hotSwapDone = true;
+            // object is destroyed
+            if (hotSwapObject != null){
+                // if there is a hotSwapObject, it is spawned in the place of the destroyed object
+                GameObject new_object = Instantiate(hotSwapObject, transform.position, transform.rotation);
+            }
+            Destroy(gameObject);
+       }
     }
 
     void Update() {
