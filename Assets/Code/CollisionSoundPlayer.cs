@@ -29,33 +29,50 @@ public class CollisionSoundPlayer : MonoBehaviour
         styrofoam = get_sound_paths("styrofoam");
     }
 
-    public void play_sound(double impactForce) {
+    public void play_sound(bool soft, double impactForce) {
         string[][] coll_sounds = null;
-
-        switch(selfName) {
-            case "glass_ceramic":
-                coll_sounds = glass_ceramic; break;
-            case "seal_plush":
-                coll_sounds = seal_plush; break;
-        }
-        if(coll_sounds != null) {
+        if(soft) {
             int intensity;
-            Debug.Log(impactForce);
-            if(impactForce < 0.15) {
-                intensity = 0;
-            }
-            else if(impactForce < 0.5) {
-                intensity = 1;
-            }
-            else {
-                intensity = 2;
-            }
+                Debug.Log(impactForce);
+                if(impactForce < 0.15) {
+                    intensity = 0;
+                }
+                else if(impactForce < 0.5) {
+                    intensity = 1;
+                }
+                else {
+                    intensity = 2;
+                }
 
-            AudioClip clip = Resources.Load<AudioClip>(choose_random_sound(coll_sounds, intensity));
-            sound.PlayOneShot(clip);
+                AudioClip clip = Resources.Load<AudioClip>(choose_random_sound(packaging_paper, intensity));
+                sound.PlayOneShot(clip);
+        }
+        else {
+            switch(selfName) {
+                case "glass_ceramic":
+                    coll_sounds = glass_ceramic; break;
+                case "seal_plush":
+                    coll_sounds = seal_plush; break;
+            }
+            if(coll_sounds != null) {
+                int intensity;
+                Debug.Log(impactForce);
+                if(impactForce < 0.15) {
+                    intensity = 0;
+                }
+                else if(impactForce < 0.5) {
+                    intensity = 1;
+                }
+                else {
+                    intensity = 2;
+                }
 
-            AudioClip clip2 = Resources.Load<AudioClip>(choose_random_sound(object_v_box, intensity));
-            sound.PlayOneShot(clip2);
+                AudioClip clip = Resources.Load<AudioClip>(choose_random_sound(coll_sounds, intensity));
+                sound.PlayOneShot(clip);
+
+                AudioClip clip2 = Resources.Load<AudioClip>(choose_random_sound(object_v_box, intensity));
+                sound.PlayOneShot(clip2);
+            }
         }
     }
 
