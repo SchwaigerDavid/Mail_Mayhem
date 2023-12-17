@@ -20,7 +20,13 @@ public class UIManager : MonoBehaviour
     public bool clicked = false;
     public GameObject showLevel; 
     public GameObject showCredits;
+    public GameObject lvltut;
+    public GameObject lvl1;
+    public GameObject lvl2;
+    public GameObject lvl3;
     public bool hovering = false;
+    public bool creditsspawned = false;
+    public bool lvlselectspawned = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +36,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetMouseButton(0))
         {
             clicked = true;
@@ -38,11 +45,14 @@ public class UIManager : MonoBehaviour
         {
             clicked = false;
         }
+
+        //Scale if hover over
+        /*
         if (hovering) { lastHit.transform.localScale = new Vector3(15, 15, 10); } 
         else if( lastHit!=null) {
             lastHit.transform.localScale = new Vector3(10, 10, 10);
         }
-
+        */
         mousePos = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         if (Physics.Raycast(ray, out hit, 100, uiLayerMask))
@@ -55,15 +65,27 @@ public class UIManager : MonoBehaviour
                 switch (hit.transform.gameObject.layer)
                 {
                     case 15:
-                        showLevel.SetActive(true);
+                        if (!lvlselectspawned)
+                        {
+                            showLevel.SetActive(true);
+                            lvltut.GetComponent<Rigidbody>().useGravity = true;
+                            lvl1.GetComponent<Rigidbody>().useGravity = true;
+                            lvl2.GetComponent<Rigidbody>().useGravity = true;
+                            lvl3.GetComponent<Rigidbody>().useGravity = true;
+                            lvlselectspawned = true;
+                        }
                         break;
                     case 16:
                         Quit();
                         break;
                     case 17:
-                        showLevel.SetActive(false);
-                        showCredits.SetActive(true);
-                        showCredits.GetComponent<Rigidbody>().useGravity = true;
+                        if (!creditsspawned)
+                        {
+                            showCredits.SetActive(true);
+                            showCredits.GetComponent<Rigidbody>().useGravity = true;
+
+                            creditsspawned = true;
+                        }
                         break;
                     case 18:
                         Camera.main.GetComponent<SceneChanger>().startPacking(1);
