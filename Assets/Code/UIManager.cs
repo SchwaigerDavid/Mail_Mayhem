@@ -97,7 +97,7 @@ public class UIManager : MonoBehaviour
                         Camera.main.GetComponent<SceneChanger>().startPacking(3);
                         break;
                     case 21:
-                        //tutorial
+                        Camera.main.GetComponent<SceneChanger>().startPacking(0);
                         break;
                 }
             }
