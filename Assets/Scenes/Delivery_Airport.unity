@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18388511, g: 0.22891082, b: 0.30240658, a: 1}
+  m_IndirectSpecularColor: {r: 0.18139268, g: 0.22701406, b: 0.3073803, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1242,7 +1242,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.9936724, b: 0.9764151, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1300,14 +1300,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000813012}
-  m_LocalRotation: {x: 0.22290125, y: 0.3321033, z: -0.122650996, w: 0.9082837}
-  m_LocalPosition: {x: 4.327, y: 3, z: 0}
+  m_LocalRotation: {x: 0.3138273, y: 0.24797301, z: -0.39468226, w: 0.82719266}
+  m_LocalPosition: {x: 4.05, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 29.103, y: 38.894, z: -4.908}
+  m_LocalEulerAnglesHint: {x: 45.638, y: 13.441, z: -45.338}
 --- !u!1 &1092202133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,7 +1826,7 @@ Light:
   m_Color: {r: 0.80943316, g: 0.7704996, b: 0.8113208, a: 1}
   m_Intensity: 2.81
   m_Range: 10
-  m_SpotAngle: 48.3
+  m_SpotAngle: 137.1
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -1881,14 +1881,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317144776}
-  m_LocalRotation: {x: 0.48881945, y: -0, z: -0, w: 0.872385}
+  m_LocalRotation: {x: 0.45664203, y: -0.0006575088, z: -0.0010794287, w: 0.8896496}
   m_LocalPosition: {x: 1.027, y: 2.673, z: -1.263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 27
-  m_LocalEulerAnglesHint: {x: 58.526, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 54.341, y: -0.212, z: -0.248}
 --- !u!1 &1409363247
 GameObject:
   m_ObjectHideFlags: 0
