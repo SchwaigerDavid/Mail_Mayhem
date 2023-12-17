@@ -11,6 +11,7 @@ TagManager:
   - player object
   - player_destroyed
   - damage_wall
+  - Selectable
   layers:
   - Default
   - TransparentFX
@@ -27,13 +28,13 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Start
+  - Quit
+  - credits
+  - Level1
+  - Level2
+  - Level3
+  - tutorial
   - 
   - 
   - 

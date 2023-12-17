@@ -143,7 +143,6 @@ GameObject:
   - component: {fileID: 3920616410126995386}
   - component: {fileID: 1319691258635663298}
   - component: {fileID: 1319691258635663299}
-  - component: {fileID: 362063140}
   m_Layer: 0
   m_Name: a
   m_TagString: damage_wall
@@ -244,19 +243,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.013788678, y: 0.00054815103, z: 0.019917116}
   m_Center: {x: 0.0033943432, y: -0.013644419, z: 0.00011164937}
---- !u!65 &362063140
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3419607069355118059}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.013788678, y: 0.026605917, z: 0.0002932631}
-  m_Center: {x: 0.0033943378, y: 0.00013467799, z: -0.009916346}
 --- !u!1 &7434542997581507004
 GameObject:
   m_ObjectHideFlags: 0
