@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 28b90a959ba5b394c8a220fa5f214997
+guid: ab228d51a4634fb4d86aa940302efd58
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 000e445e6c9b74848a9067186e4ec230, type: 2}
+      name: RemeshTexture
+    second: {fileID: 2100000, guid: 9300908bd5798e147b5202fc686dd3a8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
