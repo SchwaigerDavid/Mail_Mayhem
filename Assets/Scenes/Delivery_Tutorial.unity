@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 163712196}
   - component: {fileID: 163712199}
   - component: {fileID: 163712200}
+  - component: {fileID: 163712201}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -311,6 +312,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   packageObjects: []
+--- !u!114 &163712201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163712195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25e232dce62a7447999af8a92f1ca41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadPackageRun: 0
+  timer: 2
+  loser: {fileID: 0}
+  winner: {fileID: 0}
+  level: 0
 --- !u!1 &202797611
 GameObject:
   m_ObjectHideFlags: 0

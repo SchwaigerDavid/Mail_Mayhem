@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7900679787012422192}
   - component: {fileID: 7404505266331068103}
   - component: {fileID: 5913446284231545368}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: newspaper6 1
-  m_TagString: Untagged
+  m_TagString: Cussioning
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5424256981105311512}
   m_LocalRotation: {x: -0.7065585, y: 0.027841968, z: 0.027841974, w: 0.70655835}
   m_LocalPosition: {x: -7.3191886, y: 0.32021338, z: 0.16234554}
-  m_LocalScale: {x: 99.85057, y: 108.234314, z: 847.86084}
+  m_LocalScale: {x: 5.4245005, y: 8.13675, z: 11.901998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
