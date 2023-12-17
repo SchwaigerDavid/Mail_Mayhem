@@ -33,17 +33,22 @@ public class BeltScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.layer);
-        if ( !(onBelt.Contains(collision.gameObject)))
+        if (collision.gameObject.layer != 7&&!(onBelt.Contains(collision.gameObject)))
+
         {
-            onBelt.Add(collision.gameObject);
+            if (collision.transform.parent != null)
+            {
+                onBelt.Add(collision.gameObject.transform.parent.gameObject);
+            }
+            else {
+                onBelt.Add(collision.gameObject);
+            }
+            
         }
     }
     private void OnCollisionExit(Collision collision)
-    {
-        
-            
+    {   
             onBelt.Remove(collision.gameObject);
-        
     }
     
 }

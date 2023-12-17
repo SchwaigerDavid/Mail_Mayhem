@@ -26,8 +26,7 @@ public class PackageSaver : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.gameObject.layer);
-        if (other.gameObject.layer==mask) { 
+        if (other.gameObject.layer==7) {
             package.Add(other.gameObject);
         }
         
@@ -42,5 +41,10 @@ public class PackageSaver : MonoBehaviour
     public List<GameObject> getPackage() {
         return package;
     }
+
+    public void setPackageHolderTransform(Transform t) {
+        
+    }
+    
 
 }

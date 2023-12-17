@@ -27,7 +27,7 @@ public class PackageAnimation : MonoBehaviour
     void Start()
     {
         instance = this;
-        //closed = true;
+        closed = true;
     
     }
 
