@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2708508889743701803}
   - component: {fileID: 386201700655168668}
   - component: {fileID: 1893595316959746788}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: newspaper2
-  m_TagString: Untagged
+  m_TagString: Cussioning
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412337337698887852}
-  m_LocalRotation: {x: -0.7065585, y: 0.027841967, z: 0.027841976, w: 0.70655835}
+  m_LocalRotation: {x: -0.70655847, y: 0.02784103, z: 0.02784103, w: 0.70655847}
   m_LocalPosition: {x: -2.049675, y: 0.25596294, z: -2.0764034}
   m_LocalScale: {x: 8.3, y: 12.45, z: 18.211187}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 4.513}
 --- !u!33 &3422078667204820403
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e83a1b36a5048b744845ad831a2876e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_absorption: 0.2
-  damage_resistance: 0.1
-  durability: 0.3
+  force_absorption: 0
+  damage_resistance: 0
+  durability: 0
   type: Newspaper
   myCollider: {fileID: 386201700655168668}

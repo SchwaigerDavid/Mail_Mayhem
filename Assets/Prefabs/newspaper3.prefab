@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5776517647012684054}
   - component: {fileID: 4179611542091747680}
   - component: {fileID: 1416717130995932171}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: newspaper3
-  m_TagString: Untagged
+  m_TagString: Cussioning
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
