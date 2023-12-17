@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - moveable
+  - table
+  - destroyed player object
+  - Cussioning
+  - player object
+  - player_destroyed
+  - damage_wall
   layers:
   - Default
   - TransparentFX
@@ -11,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Package
+  - Moveable
+  - Belt
   - 
   - 
   - 
