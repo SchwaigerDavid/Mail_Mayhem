@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public bool packing = false;
     public int level;
     private bool startdelivering = false;
     public GameObject winner;
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
        
-        if (startdelivering) {
+        if (startdelivering&&!packing) {
             if (timer <= 0)
             {
                 winner.SetActive(true);

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-   
+    public bool packing = false;
     public bool loadPackageRun = false;
     public float timer = 2;
     public GameObject loser;
@@ -20,7 +20,10 @@ public class SceneChanger : MonoBehaviour
         {
             GameManager.instance.loser = loser;
             GameManager.instance.winner = winner;
-            GameManager.instance.startDelivering();
+            if (!packing)
+            {
+                GameManager.instance.startDelivering();
+            }
         }
         
     }
