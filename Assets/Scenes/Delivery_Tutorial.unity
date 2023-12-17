@@ -468,8 +468,8 @@ GameObject:
   m_Component:
   - component: {fileID: 692925271}
   - component: {fileID: 692925270}
-  - component: {fileID: 692925272}
   - component: {fileID: 692925269}
+  - component: {fileID: 692925272}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -553,17 +553,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 692925268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c236f6f55201738448667c04627a7d94, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f1b1d3b51c86ec428fbcde52fc7f9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layermaskIgnored:
-    serializedVersion: 2
-    m_Bits: 128
-  levels:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  target: {fileID: 0}
+  dist: 4
 --- !u!1 &828424164
 GameObject:
   m_ObjectHideFlags: 0

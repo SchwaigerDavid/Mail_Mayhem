@@ -693,7 +693,6 @@ MonoBehaviour:
   - {fileID: 943285921}
   - {fileID: 9381847}
   - {fileID: 617023419}
-  - {fileID: 0}
 --- !u!1 &810399933
 GameObject:
   m_ObjectHideFlags: 0
