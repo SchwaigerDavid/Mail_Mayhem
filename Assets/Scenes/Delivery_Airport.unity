@@ -444,8 +444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadPackageRun: 0
   timer: 20
-  loser: {fileID: 609080294}
-  winner: {fileID: 1599491657}
+  loser: {fileID: 1599491657}
+  winner: {fileID: 609080294}
   level: 0
 --- !u!1 &213920272
 GameObject:

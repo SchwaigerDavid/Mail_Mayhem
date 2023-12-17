@@ -36,45 +36,14 @@ public class PackageAnimation : MonoBehaviour
     {
         if (closed)
         {
-            if (timer <= 0)
-            {
-                if (o1.transform.eulerAngles.x <= openRot1.x && o1.transform.eulerAngles.x > openRot1.x - 1)
-                {
-                    
-                    closed = false;
-                }
-                else
-                {
-                    o1.transform.Rotate(speed, 0, 0);
-                    o2.transform.Rotate(-speed, 0, 0);
-                }
-                timer = .05f;
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-            }
+            o1.transform.Rotate(new Vector3(155, 0, 0));
+            o2.transform.Rotate(new Vector3(205, 0, 0));
+            closed = false;
         }
         if (open) {
-            if (closeTimer <= 0)
-            {
-                if (o2.transform.rotation.eulerAngles.x <= 271 && o2.transform.rotation.eulerAngles.x > 269)
-                {
-                    open = false;
-
-                }
-                else
-                {
-                    o1.transform.Rotate(-speed, 0, 0);
-                    o2.transform.Rotate(speed, 0, 0);
-                   
-                }
-                closeTimer = .05f;
-            }
-            else
-            {
-                closeTimer -= Time.deltaTime;
-            }
+            o1.transform.Rotate(new Vector3(-155,0,0));
+            o2.transform.Rotate(new Vector3(-205, 0, 0));
+            open = false;
         }
     }
 
