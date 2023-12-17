@@ -11,21 +11,14 @@ public class forceReductionLogic : MonoBehaviour
     public double damage_resistance; // The minimum amount of force that can be absorbed before the object
     public double durability; // how much damage the absorber can take before it is destroyed
 
-    public string type = "Styrofoam"; // what type of object is this? [Newspaper, Styrofoam, Beans, Bubblewrap]
+    public string type = "Styrofoam"; // what type of object is this? [Newspaper, Styrofoam, Beans]
 
     private bool isSplit = false; // for Styrofoam, if it did already split in half, it can't split again
 
     public Collider myCollider;
 
     private double indestructible_time = 0; // how long is the object indestructible after it split in half
-    
-    void OnMouseDown(){
-        if (Input.GetMouseButtonDown(1) && type=="Bubblewrap"){
-        // if right mouse button is pressed, and the object is bubblewrap, it pops
-            durability = 0;
-            force_absorption = 0;
-        }
-    }
+
     public double reduce_force(double impactForce, Vector3 positionOfHit){
         // reduces the impactForce and takes damage if the force is too high
         if (indestructible_time > 0) {return 0;} // if the object is indestructible, it is a newly split styrofoam and it absorbs all force for one second
@@ -38,7 +31,7 @@ public class forceReductionLogic : MonoBehaviour
         if (impactForce > damage_resistance) {
             if (durability < 0) {return;}
             // if to much force got absorbed, the absorbing_object itself takes damage
-            durability -= impactForce-damage_resistance;
+            durability -= impactForce-damage_resistance-force_absorption;
         }
     }
 
@@ -107,12 +100,6 @@ public class forceReductionLogic : MonoBehaviour
             // force absorption is directly proportional to durability
             force_absorption -= vulnerable_force * (force_absorption/durability);
             take_linear_damage(impactForce);    
-        }else if (type == "Bubblewrap"){
-            // easy hits, nothing happens, but if the force is too high, the bubblewrap pops
-            if (vulnerable_force > damage_resistance){
-                durability = 0;
-                force_absorption = 0;
-            }
         } else {
             Debug.LogError("type not found");
         }
