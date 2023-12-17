@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 public class CollisionSoundPlayer : MonoBehaviour
 {
     private AudioSource sound;
     public string selfName;
 
-    private string[][] box_v_box;
-    private string[][] box_v_floor;
-    private string[][] glass_ceramic;
-    private string[][] object_v_box;
-    private string[][] packaging_paper;
-    private string[][] seal_plush;
-    private string[][] styrofoam;
+    private AudioClip[][] box_v_box;
+    private AudioClip[][] box_v_floor;
+    private AudioClip[][] glass_ceramic;
+    private AudioClip[][] object_v_box;
+    private AudioClip[][] packaging_paper;
+    private AudioClip[][] seal_plush;
+    private AudioClip[][] styrofoam;
 
     void Start() {
         sound = GetComponent<AudioSource>();
@@ -30,7 +29,7 @@ public class CollisionSoundPlayer : MonoBehaviour
     }
 
     public void play_sound(bool soft, double impactForce) {
-        string[][] coll_sounds = null;
+        AudioClip[][] coll_sounds = null;
         if(soft) {
             int intensity;
                 Debug.Log(impactForce);
@@ -44,8 +43,7 @@ public class CollisionSoundPlayer : MonoBehaviour
                     intensity = 2;
                 }
 
-                AudioClip clip = Resources.Load<AudioClip>(choose_random_sound(packaging_paper, intensity));
-                sound.PlayOneShot(clip);
+                sound.PlayOneShot(choose_random_sound(packaging_paper, intensity));
         }
         else {
             switch(selfName) {
@@ -67,34 +65,32 @@ public class CollisionSoundPlayer : MonoBehaviour
                     intensity = 2;
                 }
 
-                AudioClip clip = Resources.Load<AudioClip>(choose_random_sound(coll_sounds, intensity));
-                sound.PlayOneShot(clip);
-
-                AudioClip clip2 = Resources.Load<AudioClip>(choose_random_sound(object_v_box, intensity));
-                sound.PlayOneShot(clip2);
+                sound.PlayOneShot(choose_random_sound(coll_sounds, intensity));
+                sound.PlayOneShot(choose_random_sound(object_v_box, intensity));
             }
         }
     }
 
-    private string[][] get_sound_paths(string path) {
-        string[][] result = new string[3][];
+    private AudioClip[][] get_sound_paths(string path) {
+        AudioClip[][] result = new AudioClip[3][];
         string[] intensities = {"light", "medium", "heavy"};
 
         for(int i = 0; i < 3; i++) {
-            result[i] = AssetDatabase.FindAssets("", new[] {"Assets/Resources/Sound/"+path+"/"+intensities[i]});
-            for(int j = 0; j < result[i].GetLength(0); j++) {
-                result[i][j] = AssetDatabase.GUIDToAssetPath(result[i][j]);
+            AudioClip[] resources = Resources.LoadAll<AudioClip>("Sound/"+path+"/"+intensities[i]);
+            int j = 0;
+            result[i] = new AudioClip[resources.Length];
+            foreach(var r in resources) {
+                result[i][j] = r;
+                j++;
             }
         }
 
         return result;
     }
 
-    private string choose_random_sound(string[][] sound_files, int intensity) {
+    private AudioClip choose_random_sound(AudioClip[][] sound_files, int intensity) {
         int random_choice = Random.Range(0, sound_files[intensity].Length);
-        string clip_name = sound_files[intensity][random_choice];
-        clip_name = clip_name.Replace("Assets/Resources/", "");
-        clip_name = clip_name.Replace(".wav", "");
-        return clip_name;
+        AudioClip clip = sound_files[intensity][random_choice];
+        return clip;
     }
 }
