@@ -32,14 +32,16 @@ public Rigidbody myRigidbody;
             double reduced_force = script.reduce_force(impactForce, transform.position);
             Debug.Log("reduced_force: " + reduced_force);
             calculate_if_takes_damage(reduced_force);
-        } else if (damage_dealing_game_tags.Contains(object_collided_with.tag)){
+        } else if (damage_dealing_game_tags.Contains(object_collided_with.tag) || object_collided_with.tag == "Untagged"){
 
             // collision with non-absorbant object
             // calculate damage to current object without absorbing any force
                 Debug.Log("impactForce: " + impactForce);
-            calculate_if_takes_damage(impactForce*2);
+                Debug.Log(object_collided_with.tag);
+                Debug.Log(myRigidbody.velocity.magnitude);
+            calculate_if_takes_damage(impactForce);
         } else{
-            Debug.Log(object_collided_with.tag);
+            Debug.Log("no damage: "+object_collided_with.tag);
         }
     }
 
