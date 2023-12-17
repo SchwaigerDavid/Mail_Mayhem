@@ -129,9 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd5be7086679e54ea2302eef6beff17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durability: 0.2
-  damage_resistance: 0.4
+  durability: 0.3
+  damage_resistance: 0.01
   relevant_colliding_game_tag: Cussioning
+  damage_dealing_game_tags:
+  - damage wall
+  - table
   hotSwapObject: {fileID: 6609749253528733594, guid: f271983899133db47889c1295c5f3fcb, type: 3}
   myRigidbody: {fileID: 6867077501411811747}
 --- !u!65 &1267184084
