@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd5be7086679e54ea2302eef6beff17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durability: 0.3
-  damage_resistance: 0.01
+  durability: 0.5
+  damage_resistance: 0.1
   relevant_colliding_game_tag: Cussioning
   damage_dealing_game_tags:
   - damage wall
