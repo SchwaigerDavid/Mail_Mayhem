@@ -44,10 +44,14 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void backToMain() {
+        DestroyImmediate(GameManager.instance.gameObject);
+        DestroyImmediate(PackageSaver.instance.transform.parent.gameObject);
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+
     }
     public void LoadPackageRun()
     {
+        Debug.Log("SendIt");
         bool deliverObject = false;
         foreach (GameObject item in PackageSaver.instance.getPackage()) { 
             if(item.transform.tag.Equals("player object")) { deliverObject = true; break; }
