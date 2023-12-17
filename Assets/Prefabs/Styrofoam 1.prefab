@@ -133,3 +133,4 @@ MonoBehaviour:
   durability: 0.1
   type: Styrofoam
   myCollider: {fileID: 8900159354398054728}
+  hotSwapObject: {fileID: 0}

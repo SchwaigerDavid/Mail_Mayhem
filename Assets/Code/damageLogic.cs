@@ -32,7 +32,7 @@ public Rigidbody myRigidbody;
             Debug.Log("impactForce: " + impactForce);
             forceReductionLogic script = object_collided_with.GetComponent<forceReductionLogic>();
 
-            sfx.play_sound(true, impactForce);
+            sfx.play_sound(object_collided_with.name, impactForce);
 
             double reduced_force = script.reduce_force(impactForce, transform.position);
             Debug.Log("reduced_force: " + reduced_force);
@@ -47,7 +47,7 @@ public Rigidbody myRigidbody;
                 Debug.Log(object_collided_with.tag);
                 Debug.Log(myRigidbody.velocity.magnitude);
             
-            sfx.play_sound(false, impactForce);
+            sfx.play_sound(object_collided_with.name, impactForce);
             calculate_if_takes_damage(impactForce);
         } else{
             Debug.Log("no damage: "+object_collided_with.tag);

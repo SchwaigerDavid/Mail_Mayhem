@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class CollisionSoundPlayer : MonoBehaviour
 {
     private AudioSource sound;
-    public string selfName;
 
     private AudioClip[][] box_v_box;
     private AudioClip[][] box_v_floor;
@@ -28,61 +27,63 @@ public class CollisionSoundPlayer : MonoBehaviour
         styrofoam = get_sound_paths("styrofoam");
     }
 
-    public void play_sound(bool soft, double impactForce) {
+    public void play_sound(string otherObjName, double impactForce) {
         AudioClip[][] coll_sounds = null;
-        if(soft) {
-            int intensity;
-                Debug.Log(impactForce);
-                if(impactForce < 0.15) {
-                    intensity = 0;
-                }
-                else if(impactForce < 0.5) {
-                    intensity = 1;
-                }
-                else {
-                    intensity = 2;
-                }
 
-                sound.PlayOneShot(choose_random_sound(packaging_paper, intensity));
+        int intensity;
+        Debug.Log(impactForce);
+        if(impactForce < 0.15) {
+            intensity = 0;
+        }
+        else if(impactForce < 0.5) {
+            intensity = 1;
         }
         else {
-            switch(selfName) {
-                case "glass_ceramic":
-                    coll_sounds = glass_ceramic; break;
-                case "seal_plush":
-                    coll_sounds = seal_plush; break;
-            }
-            if(coll_sounds != null) {
-                int intensity;
-                Debug.Log(impactForce);
-                if(impactForce < 0.15) {
-                    intensity = 0;
-                }
-                else if(impactForce < 0.5) {
-                    intensity = 1;
-                }
-                else {
-                    intensity = 2;
-                }
+            intensity = 2;
+        }
 
+        bool dampened = false;
+
+        // Collision sounds with specific object
+        if(otherObjName.StartsWith("CartonBox")) {
+            coll_sounds = object_v_box;
+        }
+        else if(otherObjName.StartsWith("newspaper")) {
+            coll_sounds = packaging_paper;
+            dampened = true;
+        }
+        else if(otherObjName.StartsWith("Styrofoam")) {
+            coll_sounds = styrofoam;
+            dampened = true;
+        }
+
+        if(coll_sounds != null) {
                 sound.PlayOneShot(choose_random_sound(coll_sounds, intensity));
-                sound.PlayOneShot(choose_random_sound(object_v_box, intensity));
+        
+            }
+
+        // Object's own noise
+        if(dampened == false) {
+            if(name.StartsWith("bigvase")) {
+                coll_sounds = glass_ceramic;
+            }
+            else if(name.StartsWith("sealplush")) {
+                coll_sounds = seal_plush;
+            }
+            
+            if(coll_sounds != null) {
+                sound.PlayOneShot(choose_random_sound(coll_sounds, intensity));
+        
             }
         }
     }
 
     private AudioClip[][] get_sound_paths(string path) {
-        AudioClip[][] result = new AudioClip[3][];
         string[] intensities = {"light", "medium", "heavy"};
+        AudioClip[][] result = new AudioClip[intensities.Length][];
 
-        for(int i = 0; i < 3; i++) {
-            AudioClip[] resources = Resources.LoadAll<AudioClip>("Sound/"+path+"/"+intensities[i]);
-            int j = 0;
-            result[i] = new AudioClip[resources.Length];
-            foreach(var r in resources) {
-                result[i][j] = r;
-                j++;
-            }
+        for(int i = 0; i < intensities.Length; i++) {
+            result[i] = Resources.LoadAll<AudioClip>("Sound/"+path+"/"+intensities[i]);
         }
 
         return result;
@@ -91,6 +92,8 @@ public class CollisionSoundPlayer : MonoBehaviour
     private AudioClip choose_random_sound(AudioClip[][] sound_files, int intensity) {
         int random_choice = Random.Range(0, sound_files[intensity].Length);
         AudioClip clip = sound_files[intensity][random_choice];
+
         return clip;
     }
+
 }
