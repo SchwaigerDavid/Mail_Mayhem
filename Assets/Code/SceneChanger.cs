@@ -45,7 +45,6 @@ public class SceneChanger : MonoBehaviour
 
     public void backToMain() {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-
     }
     public void LoadPackageRun()
     {
