@@ -14,10 +14,27 @@ public class Moveable : MonoBehaviour
     private bool clicking = false;
     private bool moving = false;
 
-    public LayerMask layermaskIgnored; 
+    public LayerMask layermaskIgnored;
+    public GameObject[] levels;
     // Start is called before the first frame update
     void Start()
     {
+        
+
+            switch (GameManager.instance.level)
+            {
+                case 0:
+                    break;
+                case 1:
+                    levels[1].SetActive(true);
+                    break;
+                case 2:
+                    levels[2].SetActive(true);
+                    break;
+                case 3:
+                    break;
+
+            }
         
     }
 

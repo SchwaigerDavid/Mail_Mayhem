@@ -7,11 +7,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int level;
 
+
     private void Start()
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+  
 
 
 }

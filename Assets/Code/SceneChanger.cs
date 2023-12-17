@@ -27,9 +27,6 @@ public class SceneChanger : MonoBehaviour
                 {
                     item.transform.parent = PackageSaver.instance.packageHolder.transform;
                 }
-                
-                
-
                 loadLevel(GameManager.instance.level);
                 loadPackageRun = false;
             }
