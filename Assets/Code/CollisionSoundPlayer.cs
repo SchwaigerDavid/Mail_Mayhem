@@ -7,7 +7,6 @@ using UnityEditor;
 public class CollisionSoundPlayer : MonoBehaviour
 {
     private AudioSource sound;
-    private AudioClip clip;
     public string selfName;
 
     private string[][] box_v_box;
@@ -42,24 +41,21 @@ public class CollisionSoundPlayer : MonoBehaviour
         if(coll_sounds != null) {
             int intensity;
             Debug.Log(impactForce);
-            if(impactForce < 0.05) {
+            if(impactForce < 0.15) {
                 intensity = 0;
             }
-            else if(impactForce < 0.2) {
+            else if(impactForce < 0.5) {
                 intensity = 1;
             }
             else {
                 intensity = 2;
             }
 
-            int random_choice = Random.Range(0, coll_sounds[intensity].Length);
-            string clip_name = coll_sounds[intensity][random_choice];
-            clip_name = clip_name.Replace("Assets/Resources/", "");
-            clip_name = clip_name.Replace(".wav", "");
-            
-
-            clip = Resources.Load<AudioClip>(clip_name);
+            AudioClip clip = Resources.Load<AudioClip>(choose_random_sound(coll_sounds, intensity));
             sound.PlayOneShot(clip);
+
+            AudioClip clip2 = Resources.Load<AudioClip>(choose_random_sound(object_v_box, intensity));
+            sound.PlayOneShot(clip2);
         }
     }
 
@@ -75,5 +71,13 @@ public class CollisionSoundPlayer : MonoBehaviour
         }
 
         return result;
+    }
+
+    private string choose_random_sound(string[][] sound_files, int intensity) {
+        int random_choice = Random.Range(0, sound_files[intensity].Length);
+        string clip_name = sound_files[intensity][random_choice];
+        clip_name = clip_name.Replace("Assets/Resources/", "");
+        clip_name = clip_name.Replace(".wav", "");
+        return clip_name;
     }
 }
