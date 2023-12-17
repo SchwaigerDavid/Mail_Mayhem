@@ -702,6 +702,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  winner: {fileID: 0}
+  loser: {fileID: 0}
+  timer: 10
 --- !u!4 &211745701
 Transform:
   m_ObjectHideFlags: 0
@@ -2868,6 +2871,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadPackageRun: 0
   timer: 2
+  loser: {fileID: 0}
+  winner: {fileID: 0}
   level: 0
 --- !u!1 &968373117 stripped
 GameObject:
@@ -5401,7 +5406,6 @@ MonoBehaviour:
   lvltut: {fileID: 143122501}
   lvl1: {fileID: 1255833962}
   lvl2: {fileID: 705304877}
-  lvl3: {fileID: 0}
   hovering: 0
   creditsspawned: 0
   lvlselectspawned: 0

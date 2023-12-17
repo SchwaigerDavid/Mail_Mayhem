@@ -1987,6 +1987,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadPackageRun: 0
   timer: 2
+  loser: {fileID: 0}
+  winner: {fileID: 0}
   level: 0
 --- !u!1001 &1643630836
 PrefabInstance:
