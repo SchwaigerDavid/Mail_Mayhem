@@ -2033,7 +2033,7 @@ RectTransform:
   - {fileID: 680628560}
   - {fileID: 653649032}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2268,7 +2268,7 @@ RectTransform:
   - {fileID: 2110869127}
   - {fileID: 1139651560}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2718,12 +2718,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661214952}
   m_LocalRotation: {x: 0.40705326, y: 0.26753408, z: -0.12601212, w: 0.86420727}
-  m_LocalPosition: {x: -2.49, y: 2.216, z: -1.92}
+  m_LocalPosition: {x: -2.104813, y: 1.9230001, z: 2.3032384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 921176736}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50.442, y: 34.402, z: 0}
 --- !u!1 &1733038731 stripped
 GameObject:
@@ -3033,6 +3033,22 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 657a3ecb8bd2e1d4687edf2212ef545b, type: 3}
       propertyPath: m_Name
       value: vehiclebg
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126494891960946226, guid: 657a3ecb8bd2e1d4687edf2212ef545b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 23845.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126494891960946226, guid: 657a3ecb8bd2e1d4687edf2212ef545b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9319.268
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126494891960946226, guid: 657a3ecb8bd2e1d4687edf2212ef545b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9319.268
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126494891960946226, guid: 657a3ecb8bd2e1d4687edf2212ef545b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 657a3ecb8bd2e1d4687edf2212ef545b, type: 3}
