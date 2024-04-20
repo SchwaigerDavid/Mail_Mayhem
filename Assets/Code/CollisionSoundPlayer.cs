@@ -64,6 +64,8 @@ public class CollisionSoundPlayer : MonoBehaviour
 
         // Object's own noise
         if(dampened == false) {
+            coll_sounds = null;
+            
             if(name.StartsWith("bigvase")) {
                 coll_sounds = glass_ceramic;
             }
